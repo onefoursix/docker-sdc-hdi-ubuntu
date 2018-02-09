@@ -17,34 +17,34 @@ within this project as described below:
 
 #### HortonWorks Repo List
 
-Copy the file `/etc/apt/sources.list.d/HDP.list` from one of the target HDInsights 
-Cluster's nodes to this project's `resources/etc.apt.sources.list` directory
+Copy the file `/etc/apt/sources.list.d/HDP.list` from one of the nodes on the target 
+HDInsights Cluster to this project's `resources/etc.apt.sources.list` directory
 
 #### HDInsights Common Certs and Scripts
 
 In order to read encrypted Azure Storage Account keys from the HDInsights hadoop
 config file `core-site.xml`, the HDInsights Cluster certs and `decrypt.sh` script be 
 copied to this project.  An alternative would be to replace the encrypted Storage 
-Account keys in `core-site.xml` and to replace them with plain-text keys and to 
-also remove the property
+Account keys in `core-site.xml` with plain-text keys and to remove the property
 `fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
-`core-site.xml`.   I prefer leaving the encrypted keys in place
+`core-site.xml`.   I prefer leaving the encrypted keys in place to avoid having 
+plain-text keys lying around
 
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
-`/usr/lib/hdinsight-common/scripts` from one of the target HDInsights Cluster's nodes 
-to this project's `resources/hdinsight-common` directory
+`/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDInsights 
+Cluster to this project's `resources/hdinsight-common` directory
 
 #### HDInsights Hadoop Config Files
 
-Copy the directories `/etc/hadoop/conf` from one of the target HDInsights Cluster's nodes
-to this project's `resources/etc.hadoop.conf` directory
+Copy the directories `/etc/hadoop/conf` from one of the nodes on the target 
+HDInsights Cluster to this project's `resources/etc.hadoop.conf` directory
 
 #### HDInsights Hive Config Files
 
-Copy the directories `/etc/hive/conf` from one of the target HDInsights Cluster's nodes
-to this project's `resources/etc.hive.conf` directory
+Copy the directories `/etc/hive/conf` from one of the nodes on the target HDInsights 
+Cluster to this project's `resources/etc.hive.conf` directory
 
-## Configuration
+## Environment Variables
 
 Set the SDC Version:
 
