@@ -29,13 +29,13 @@ within this project as described below:
 
 #### HortonWorks Repo List
 
-Copy the file `/etc/apt/sources.list.d/HDP.list` from an HDInsights Cluster node 
-to this project's `resources/etc.apt.sources.list` directory
+Copy the file `/etc/apt/sources.list.d/HDP.list` from one of the target HDInsights 
+Cluster's nodes to this project's `resources/etc.apt.sources.list` directory
 
 #### HDInsights Common Certs and Scripts
 
 In order to read encrypted Azure Storage Account keys from the HDInsights hadoop
-config file core-site.xml, the HDInsights Cluster certs and decrypt.sh script need 
+config file `core-site.xml`, the HDInsights Cluster certs and `decrypt.sh` script need 
 to be copied to this project. 
 
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
