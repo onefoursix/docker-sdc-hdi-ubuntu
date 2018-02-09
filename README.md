@@ -2,7 +2,8 @@
 
 This project provides an Ubuntu-based Docker image for a standalone StreamSets Data 
 Collector (SDC) preconfigured with  HortonWorks hadoop-client libraries for use within 
-an Azure environment to connect to HDInsights (HDI) clusters
+an Azure environment to connect to HDInsights (HDI) clusters and run cluster-batch
+pipelines.
 
 Info on StreamSets Data Collector is [here](https://streamsets.com/products/sdc)
 
