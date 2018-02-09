@@ -28,7 +28,7 @@ Cluster to this project's `resources/etc.hive.conf` directory
 The hadoop client libs installed on the SDC node must precisely match those in use 
 on the HDI cluster.  To ensure that, copy the file `/etc/apt/sources.list.d/HDP.list` 
 from one of the nodes on the target HDI Cluster to this project's
-`resources/etc.apt.sources.list` directory
+`resources/etc.apt.sources.list.d` directory
 
 #### HDInsights Common Certs and Scripts
 
@@ -36,10 +36,10 @@ In order to read encrypted Azure Storage Account keys from the HDI cluster's
  `core-site.xml` config file, the HDI Cluster's certs and `decrypt.sh` script are needed.
  
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
-`/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDInsights 
+`/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDI 
 Cluster to this project's `resources/hdinsight-common` directory
 
-An alternative to this step would be to replace the encrypted Storage Account keys 
+An alternative would be to replace the encrypted Storage Account keys 
 in `core-site.xml` with plain-text keys and to remove the property
 `fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
 `core-site.xml`.   I prefer leaving the encrypted keys in place to avoid having 
@@ -54,17 +54,20 @@ Set the SDC Version:
 
 	$ export SDC_VERSION=3.1.0.0
 
-Set the location where SDC will be installed:
+Set the path where SDC will be installed:
 
 	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
 
-Set the IP Address for the HDInsights Cluster's "headnodehost"
-(You can get this address by pinging headnodehost from one of the nodes on the 
-HDInsights target cluster)
+Set the IP Address for the HDI Cluster's "headnodehost"
+(You can get this address by pinging `headnodehost` from one of the nodes on the 
+HDI target cluster).  
 
-	$ export HEAD_NODE_HOST=172.16.0.11
+	$ export HEAD_NODE_HOST=<head node host IP address>
+	
+For example, if the headnode host IP address is 172.16.0.11 the command would look like this:
 
-
+		$ export HEAD_NODE_HOST=172.16.0.11
+	
 ## Build
 
 Build the Docker Container:
