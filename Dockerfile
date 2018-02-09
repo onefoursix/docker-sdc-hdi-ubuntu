@@ -32,6 +32,7 @@ ARG SDC_VERSION=3.1.0.0
 ARG SDC_URL=http://nightly.streamsets.com.s3-us-west-2.amazonaws.com/datacollector/3.1/3.1.0.0-RC2/tarball/streamsets-datacollector-core-3.1.0.0.tgz
 
 
+
 ######################################
 ## Install Dependencies:
 ##
@@ -103,7 +104,7 @@ COPY resources/etc.hive.conf/* /etc/hive/conf/
 ######################################
 ## Load the HDI Hadoop configs into SDC Resources
 ######################################
-COPY resources/etc.hive.conf ${SDC_RESOURCES}/hadoop-conf
+COPY resources/etc.hadoop.conf ${SDC_RESOURCES}/hadoop-conf
 COPY resources/etc.hive.conf ${SDC_RESOURCES}/hive-conf
 
 
