@@ -44,6 +44,7 @@ HDInsights Cluster to this project's `resources/etc.hadoop.conf` directory
 Copy the directories `/etc/hive/conf` from one of the nodes on the target HDInsights 
 Cluster to this project's `resources/etc.hive.conf` directory
 
+
 ## Environment Variables
 
 Set the SDC Version:
@@ -56,7 +57,7 @@ Set the location where SDC will be installed:
 
 
 
-## Build:
+## Build
 
 Build the Docker Container:
 
