@@ -9,6 +9,7 @@ The image uses Docker Volumes for data persistence
 ## Configuration
 
 Set the SDC Version
+
 	$ export SDC_VERSION=3.1.0.0
 
 
