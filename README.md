@@ -17,23 +17,25 @@ copied to this project's resources directory before creating the image, as descr
 #### HortonWorks Repo List
 
 The hadoop client libs installed on the SDC node must precisely match those in use 
-on the HDI cluster.  To make sure that is the case, copy the file
- `/etc/apt/sources.list.d/HDP.list` from one of the nodes on the target 
-HDI Cluster to this project's `resources/etc.apt.sources.list` directory
+on the HDI cluster.  To ensure that, copy the file `/etc/apt/sources.list.d/HDP.list` 
+from one of the nodes on the target HDI Cluster to this project's
+`resources/etc.apt.sources.list` directory
 
 #### HDInsights Common Certs and Scripts
 
 In order to read encrypted Azure Storage Account keys from the HDI cluster's 
- `core-site.xml` config file, the HDI Cluster certs and `decrypt.sh` script are needed.
-An alternative would be to replace the encrypted Storage 
-Account keys in `core-site.xml` with plain-text keys and to remove the property
+ `core-site.xml` config file, the HDI Cluster's certs and `decrypt.sh` script are needed.
+ 
+Copy the directories `/usr/lib/hdinsight-common/certs` and 
+`/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDInsights 
+Cluster to this project's `resources/hdinsight-common` directory
+
+An alternative to this step would be to replace the encrypted Storage Account keys 
+in `core-site.xml` with plain-text keys and to remove the property
 `fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
 `core-site.xml`.   I prefer leaving the encrypted keys in place to avoid having 
 plain-text keys lying around, so here are the steps to copy the necessary files:
 
-Copy the directories `/usr/lib/hdinsight-common/certs` and 
-`/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDInsights 
-Cluster to this project's `resources/hdinsight-common` directory
 
 #### HDInsights Hadoop Config Files
 
