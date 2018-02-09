@@ -8,24 +8,12 @@ Info on StreamSets Data Collector is [here](https://streamsets.com/products/sdc)
 
 The image uses Docker Volumes for data persistence
 
-## Configuration
-
-Set the SDC Version:
-
-	$ export SDC_VERSION=3.1.0.0
-
-Set the location where SDC will be installed:
-
-	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
-
-
 ## Required Resources
 
 There are a number of artifacts that need to be added to this project's resources
 directory before creating the image.  These artifacts should be copied from the
 Azure HDInsights cluster node SDC will connect to to the appropriate directories
 within this project as described below:
-
 
 #### HortonWorks Repo List
 
@@ -55,6 +43,16 @@ to this project's `resources/etc.hadoop.conf` directory
 
 Copy the directories `/etc/hive/conf` from one of the target HDInsights Cluster's nodes
 to this project's `resources/etc.hive.conf` directory
+
+## Configuration
+
+Set the SDC Version:
+
+	$ export SDC_VERSION=3.1.0.0
+
+Set the location where SDC will be installed:
+
+	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
 
 
 
