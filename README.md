@@ -34,7 +34,7 @@ An alternative to this step would be to replace the encrypted Storage Account ke
 in `core-site.xml` with plain-text keys and to remove the property
 `fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
 `core-site.xml`.   I prefer leaving the encrypted keys in place to avoid having 
-plain-text keys lying around, so here are the steps to copy the necessary files:
+plain-text keys in the config files
 
 
 #### HDInsights Hadoop Config Files
