@@ -13,14 +13,14 @@ The image uses Docker Volumes for data persistence
 In order to connect to a specific HDI cluster, several artifacts need to be 
 copied to this project's resources directory before creating the image, as described below: 
 
-#### HDInsights Hadoop Config Files
+#### HDI Hadoop Config Files
 
 Copy the directory `/etc/hadoop/conf` from one of the nodes on the target 
-HDInsights Cluster to this project's `resources/etc.hadoop.conf` directory
+HDI Cluster to this project's `resources/etc.hadoop.conf` directory
 
-#### HDInsights Hive Config Files
+#### HDI Hive Config Files
 
-Copy the directory `/etc/hive/conf` from one of the nodes on the target HDInsights 
+Copy the directory `/etc/hive/conf` from one of the nodes on the target HDI 
 Cluster to this project's `resources/etc.hive.conf` directory
 
 #### HortonWorks Repo List
