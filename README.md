@@ -62,7 +62,7 @@ Set the IP Address for the HDI Cluster's "headnodehost"
 (You can get this address by pinging `headnodehost` from one of the nodes on the 
 HDI target cluster).  
 
-	$ export HEAD_NODE_HOST=<head node host IP address>
+	$ export HEAD_NODE_HOST=<headnodehost IP address>
 	
 For example, if the headnode host IP address is 172.16.0.11 the command would look like this:
 
@@ -75,9 +75,9 @@ Build the Docker Container:
 	$ docker build -t mbrooks/datacollector:$SDC_VERSION .
 
 
-## Create a Data Container with multiple Docker Volumes 
+## Create a data container 
 
-This command creates a Docker Data Container named "sdc-volumes" 
+This command creates a Docker data container named "sdc-volumes" 
 with multiple data volumes so that important SDC data and configs 
 persist across container restarts and upgrades
 
