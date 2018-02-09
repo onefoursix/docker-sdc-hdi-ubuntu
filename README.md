@@ -66,7 +66,7 @@ HDI target cluster).
 	
 For example, if the headnode host IP address is 172.16.0.11 the command would look like this:
 
-		$ export HEAD_NODE_HOST=172.16.0.11
+	$ export HEAD_NODE_HOST=172.16.0.11
 	
 ## Build
 
