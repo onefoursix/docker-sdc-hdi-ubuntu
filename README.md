@@ -22,15 +22,25 @@ Set the location where SDC will be installed:
 ## Required Resources
 
 There are a number of artifacts that need to be added to this project's resources
-directory before creating the image.  These artifacts should be copied from an
-Azure HDInsights cluster node to the appropriate directories within this project 
-as described below:
+directory before creating the image.  These artifacts should be copied from the
+Azure HDInsights cluster node SDC will connect to to the appropriate directories
+within this project as described below:
 
 
-#### HortonWorks Repo Info
+#### HortonWorks Repo List
 
 Copy the file `/etc/apt/sources.list.d/HDP.list` from an HDInsights Cluster node 
 to this project's `resources/etc.apt.sources.list` directory
+
+#### HDInsights Common Certs and Scripts
+
+In order to read encrypted Azure Storage Account keys from the HDInsights hadoop
+config file core-site.xml, the HDInsights Cluster certs and decrypt.sh script need 
+to be copied to this project. 
+
+Copy the directories `/usr/lib/hdinsight-common/certs` and 
+`/usr/lib/hdinsight-common/scripts` from an HDInsights Cluster node 
+to this project's `resources/hdinsight-common` directory
 
 
 ## Build:
