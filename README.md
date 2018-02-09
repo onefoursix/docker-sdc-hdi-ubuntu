@@ -35,8 +35,12 @@ Cluster's nodes to this project's `resources/etc.apt.sources.list` directory
 #### HDInsights Common Certs and Scripts
 
 In order to read encrypted Azure Storage Account keys from the HDInsights hadoop
-config file `core-site.xml`, the HDInsights Cluster certs and `decrypt.sh` script need 
-to be copied to this project. 
+config file `core-site.xml`, the HDInsights Cluster certs and `decrypt.sh` script be 
+copied to this project.  An alternative would be to replace the encrypted Storage 
+Account keys in `core-site.xml` and to replace them with plain-text keys and to 
+also remove the property
+`fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
+`core-site.xml`.   I prefer leaving the encrypted keys in place
 
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
 `/usr/lib/hdinsight-common/scripts` from one of the target HDInsights Cluster's nodes 
