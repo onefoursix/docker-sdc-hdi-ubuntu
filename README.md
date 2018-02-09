@@ -58,6 +58,8 @@ Set the location where SDC will be installed:
 
 ## Build:
 
+Build the Docker Container:
+
 	$ docker build -t mbrooks/datacollector:$SDC_VERSION .
 
 
