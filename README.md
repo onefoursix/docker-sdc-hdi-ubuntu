@@ -1,8 +1,10 @@
 # README
 
-This project provides a Docker image for a standalone StreamSets Data Collector (SDC)
-preconfigured with  HortonWorks hadoop-client libraries for use within an Azure 
-environment to connect to HDInsights clusters
+This project provides a Ubuntu-based Docker image for a standalone StreamSets Data 
+Collector (SDC) preconfigured with  HortonWorks hadoop-client libraries for use within 
+an Azure environment to connect to HDInsights clusters
+
+Info on StreamSets Data Collector is [here](https://streamsets.com/products/sdc)
 
 The image uses Docker Volumes for data persistence
 
@@ -15,6 +17,17 @@ Set the SDC Version:
 Set the location where SDC will be installed:
 
 	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
+
+
+## Required Resources
+
+There are a number of artifacts that need to be added to this project's resources
+directory before creating the image.  These artifacts should be copied from an
+Azure HDInsights cluster node to the appropriate directories within this project 
+as described below:
+
+
+#### 
 
 
 ## Build:
@@ -35,7 +48,6 @@ persist across container restarts and upgrades
 	 -v $SDC_DIST/streamsets-libs \
 	 -v /resources \
 	 -v /opt/streamsets-datacollector-user-libs \
-	 -v /sdc-libs-extras \
 	 -v $SDC_DIST/streamsets-libs-extras \
 	 -v /logs \
 	 -v /usr/lib/hdinsight-common \
