@@ -2,7 +2,7 @@
 
 This project provides an Ubuntu-based Docker image for a standalone StreamSets Data 
 Collector (SDC) preconfigured with  HortonWorks hadoop-client libraries for use within 
-an Azure environment to connect to HDInsights clusters
+an Azure environment to connect to HDInsights (HDI) clusters
 
 Info on StreamSets Data Collector is [here](https://streamsets.com/products/sdc)
 
@@ -10,25 +10,26 @@ The image uses Docker Volumes for data persistence
 
 ## Required Resources
 
-There are a number of artifacts that need to be added to this project's resources
-directory before creating the image.  These artifacts should be copied from the
-Azure HDInsights cluster node SDC will connect to to the appropriate directories
-within this project as described below:
+In order to connect to a specific HDI cluster, several artifacts need to be 
+copied to this project's resources directory before creating the image, as described below: 
+
 
 #### HortonWorks Repo List
 
-Copy the file `/etc/apt/sources.list.d/HDP.list` from one of the nodes on the target 
-HDInsights Cluster to this project's `resources/etc.apt.sources.list` directory
+The hadoop client libs installed on the SDC node must precisely match those in use 
+on the HDI cluster.  To make sure that is the case, copy the file
+ `/etc/apt/sources.list.d/HDP.list` from one of the nodes on the target 
+HDI Cluster to this project's `resources/etc.apt.sources.list` directory
 
 #### HDInsights Common Certs and Scripts
 
-In order to read encrypted Azure Storage Account keys from the HDInsights hadoop
-config file `core-site.xml`, the HDInsights Cluster certs and `decrypt.sh` script be 
-copied to this project.  An alternative would be to replace the encrypted Storage 
+In order to read encrypted Azure Storage Account keys from the HDI cluster's 
+ `core-site.xml` config file, the HDI Cluster certs and `decrypt.sh` script are needed.
+An alternative would be to replace the encrypted Storage 
 Account keys in `core-site.xml` with plain-text keys and to remove the property
 `fs.azure.account.keyprovider.<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net` from 
 `core-site.xml`.   I prefer leaving the encrypted keys in place to avoid having 
-plain-text keys lying around
+plain-text keys lying around, so here are the steps to copy the necessary files:
 
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
 `/usr/lib/hdinsight-common/scripts` from one of the nodes on the target HDInsights 
