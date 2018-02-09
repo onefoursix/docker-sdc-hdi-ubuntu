@@ -37,15 +37,21 @@ ARG SDC_URL=http://nightly.streamsets.com.s3-us-west-2.amazonaws.com/datacollect
 ##
 ## - OpenJDK8
 ## - curl
-## - HortonWorks hadoop-client 
 ##  
 ## Note that OpenJDK 1.8.0.161 (the current default for Ubuntu 16.04) allows strong crypto by default
 ######################################
-COPY resources/etc.apt.sources.list.d/HDP.list /etc/apt/sources.list.d/
 RUN apt-get update && apt-get install -y \
   default-jdk \
-  curl \
-  hadoop-client
+  curl
+
+
+
+######################################
+## Install HortonWorks hadoop-client
+######################################  
+COPY resources/etc.apt.sources.list.d/HDP.list /etc/apt/sources.list.d/
+RUN apt-get update && apt-get install -y --allow-unauthenticated hadoop-client
+
 
 
 ######################################

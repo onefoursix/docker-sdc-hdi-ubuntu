@@ -23,7 +23,7 @@ HDI Cluster to this project's `resources/etc.hadoop.conf` directory
 #### HDI Hive Config Files
 
 Copy the directory `/etc/hive/conf` from one of the nodes on the target HDI 
-Cluster to this project's `resources/etc.hive.conf` directory
+Cluster to this project's `resources/etc.hive.conf` directory 
 
 #### HortonWorks Repo List
 
@@ -32,7 +32,7 @@ on the HDI cluster.  To ensure that, copy the file `/etc/apt/sources.list.d/HDP.
 from one of the nodes on the target HDI Cluster to this project's
 `resources/etc.apt.sources.list.d` directory
 
-#### HDInsights Common Certs and Scripts
+#### HDI Common Certs and Scripts
 
 In order to read encrypted Azure Storage Account keys from the HDI cluster's 
  `core-site.xml` config file, the HDI Cluster's certs and `decrypt.sh` script are needed.
