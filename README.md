@@ -106,7 +106,7 @@ headnodehost IP address and exposes the SDC port:
 	 -d mbrooks/datacollector:$SDC_VERSION dc 
  
  ## Connect to SDC
- You should be able to connect to SDC at http://\<docker-host\>:18630
+ You should be able to connect to SDC at `http://<docker-host>:18630`
  
  
  
