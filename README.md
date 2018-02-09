@@ -39,8 +39,19 @@ config file core-site.xml, the HDInsights Cluster certs and decrypt.sh script ne
 to be copied to this project. 
 
 Copy the directories `/usr/lib/hdinsight-common/certs` and 
-`/usr/lib/hdinsight-common/scripts` from an HDInsights Cluster node 
+`/usr/lib/hdinsight-common/scripts` from one of the target HDInsights Cluster's nodes 
 to this project's `resources/hdinsight-common` directory
+
+#### HDInsights Hadoop Config Files
+
+Copy the directories `/etc/hadoop/conf` from one of the target HDInsights Cluster's nodes
+to this project's `resources/etc.hadoop.conf` directory
+
+#### HDInsights Hive Config Files
+
+Copy the directories `/etc/hive/conf` from one of the target HDInsights Cluster's nodes
+to this project's `resources/etc.hive.conf` directory
+
 
 
 ## Build:
