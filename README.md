@@ -8,17 +8,22 @@ The image uses Docker Volumes for data persistence
 
 ## Configuration
 
-Set the SDC Version
+Set the SDC Version:
 
 	$ export SDC_VERSION=3.1.0.0
 
+The location where SDC will be installed:
+
+	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
 
 
-## Build
+## Build:
+
 	$ docker build -t mbrooks/datacollector:$SDC_VERSION .
 
-#### The location where SDC will be installed
-$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
+
+## Create a Data Container with multiple Volumes
+
 
 
 # Create a data container with volumes for data, configs, streamsets-libs, 
