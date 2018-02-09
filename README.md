@@ -116,8 +116,9 @@ headnodehost IP address and exposes the SDC port:
  ## Post-install steps 
  The image does not yet come preloaded with the HDI Stage Libs installed, so after SDC is
  up and running and you can connect to it in a browser, go to the package manager and 
- install the HDP 2.6.2.1-1 Stage Lib 
- I hope to add that feature - to automatically install that lib during the build -- sometime soon
+ install the HDP 2.6.2.1-1 Stage Lib
+  
+ I hope to add that feature sometime soon
  
  
  
