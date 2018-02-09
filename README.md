@@ -89,6 +89,7 @@ persist across container restarts and upgrades
 	 -v /opt/streamsets-datacollector-user-libs \
 	 -v $SDC_DIST/streamsets-libs-extras \
 	 -v /logs \
+	 -v /usr/lib/hdinsight-common/certs \
 	 --name sdc-volumes \
 	mbrooks/datacollector:$SDC_VERSION
 
