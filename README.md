@@ -1,6 +1,6 @@
 # README
 
-This project provides a Ubuntu-based Docker image for a standalone StreamSets Data 
+This project provides an Ubuntu-based Docker image for a standalone StreamSets Data 
 Collector (SDC) preconfigured with  HortonWorks hadoop-client libraries for use within 
 an Azure environment to connect to HDInsights clusters
 
@@ -27,7 +27,10 @@ Azure HDInsights cluster node to the appropriate directories within this project
 as described below:
 
 
-#### 
+#### HortonWorks Repo Info
+
+Copy the file `/etc/apt/sources.list.d/HDP.list` from an HDInsights Cluster node 
+to this project's `resources/etc.apt.sources.list` directory
 
 
 ## Build:
