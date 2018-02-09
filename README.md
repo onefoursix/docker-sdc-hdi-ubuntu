@@ -8,6 +8,8 @@ Info on StreamSets Data Collector is [here](https://streamsets.com/products/sdc)
 
 The image uses Docker Volumes for data persistence
 
+Deploy the Docker container in the same Azure region as the HDI cluster
+
 ## Required Resources
 
 In order to connect to a specific HDI cluster, several artifacts need to be 
