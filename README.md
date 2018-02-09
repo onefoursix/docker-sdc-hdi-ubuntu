@@ -95,14 +95,22 @@ persist across container restarts and upgrades
 
 
 ## Run the container
-Run the container with the following command to expose the SDC port and passing 
-in the cluster's headnodehost
+Run the container with the following command which references the data container and the 
+headnodehost IP address and exposes the SDC port:
+
  
 	$ docker run \
 	 --volumes-from sdc-volumes \
 	 -p 18630:18630  \
 	 --add-host="headnodehost:$HEAD_NODE_HOST" \
 	 -d mbrooks/datacollector:$SDC_VERSION dc 
+ 
+ ## Connect to SDC
+ You should be able to connect to SDC at http://<docker-host>:18630
+ 
+ 
+ 
+ 
  
  
 
