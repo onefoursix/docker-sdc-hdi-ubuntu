@@ -36,12 +36,12 @@ Cluster to this project's `resources/hdinsight-common` directory
 
 #### HDInsights Hadoop Config Files
 
-Copy the directories `/etc/hadoop/conf` from one of the nodes on the target 
+Copy the directory `/etc/hadoop/conf` from one of the nodes on the target 
 HDInsights Cluster to this project's `resources/etc.hadoop.conf` directory
 
 #### HDInsights Hive Config Files
 
-Copy the directories `/etc/hive/conf` from one of the nodes on the target HDInsights 
+Copy the directory `/etc/hive/conf` from one of the nodes on the target HDInsights 
 Cluster to this project's `resources/etc.hive.conf` directory
 
 
@@ -55,6 +55,11 @@ Set the location where SDC will be installed:
 
 	$ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
 
+Set the IP Address for the HDInsights Cluster's "headnodehost"
+(You can get this address by pinging headnodehost from one of the nodes on the 
+HDInsights target cluster)
+
+	$ export HEAD_NODE_HOST=172.16.0.11
 
 
 ## Build
@@ -72,31 +77,26 @@ persist across container restarts and upgrades
 
 	$ docker create \
 	 -v /etc/sdc \
-	 -v /etc/apt/sources.list.d \
 	 -v /data \
 	 -v $SDC_DIST/streamsets-libs \
 	 -v /resources \
 	 -v /opt/streamsets-datacollector-user-libs \
 	 -v $SDC_DIST/streamsets-libs-extras \
 	 -v /logs \
-	 -v /usr/lib/hdinsight-common \
 	 --name sdc-volumes \
 	mbrooks/datacollector:$SDC_VERSION
 
 
 
-## Running a container
-# Run the custom SDC using the data container
-$ docker run \
- --volumes-from sdc-volumes \
- -p 18630:18630  \
- --add-host="headnodehost:$HEAD_NODE_HOST" \
- -d mark/datacollector:$SDC_VERSION dc 
+## Run the container
+Run the container with the following command to expose the SDC port and passing 
+in the cluster's headnodehost
+ 
+	$ docker run \
+	 --volumes-from sdc-volumes \
+	 -p 18630:18630  \
+	 --add-host="headnodehost:$HEAD_NODE_HOST" \
+	 -d mbrooks/datacollector:$SDC_VERSION dc 
  
  
- 
-# Connect in bash 
-$ docker exec -it 581fa67c4b34 bash
-
-docker run  -p 18630:18630 -d mark/datacollector:3.1.0.0 dc 
 
