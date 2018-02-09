@@ -24,6 +24,9 @@ Set the location where SDC will be installed:
 
 ## Create a Data Container with multiple Docker Volumes 
 
+This command creates a Docker Data Container named "sdc-volumes" 
+with multiple data volumes so that important SDC data and configs 
+persist across container restarts and upgrades
 
 	$ docker create \
 	 -v /etc/sdc \
