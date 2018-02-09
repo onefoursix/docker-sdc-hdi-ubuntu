@@ -1,16 +1,18 @@
-# README for the docker-sdc-hdi-ubuntu Docker Image
+# README
 
-This image includes a standalone StreamSets Data Collector preconfigured with the HortonWorks 
-hadoop-client for use within an Azure environment to connect to HDInsights clusters
+This project provides a Docker image for a standalone StreamSets Data Collector preconfigured
+with the HortonWorks hadoop-client libraries for use within an Azure environment to connect to 
+an HDInsights cluster
 
+The image uses Docker Volumes for data persistence
 
-
+## Configuration
 $ export SDC_VERSION=3.1.0.0
 $ export SDC_DIST=/opt/streamsets-datacollector-$SDC_VERSION
-$ export HEAD_NODE_HOST=111.111.111.111
 
 
-# Build
+
+## Build
 $ docker build -t mark/datacollector:$SDC_VERSION .
 
 
@@ -33,6 +35,8 @@ $ docker create \
  mark/datacollector:$SDC_VERSION
 
 
+
+## Running a container
 # Run the custom SDC using the data container
 $ docker run \
  --volumes-from sdc-volumes \
