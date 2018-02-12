@@ -29,7 +29,7 @@ LABEL maintainer="Mark Brooks <mark@streamsets.com>"
 ## SDC version and download location
 ######################################
 ARG SDC_VERSION=3.1.0.0
-ARG SDC_URL=http://nightly.streamsets.com.s3-us-west-2.amazonaws.com/datacollector/3.1/3.1.0.0-RC2/tarball/streamsets-datacollector-core-3.1.0.0.tgz
+ARG SDC_URL=https://archives.streamsets.com/datacollector/3.1.0.0/tarball/streamsets-datacollector-core-3.1.0.0.tgz
 
 
 
